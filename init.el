@@ -21,6 +21,11 @@
 (global-set-key (kbd "C-c a") #'org-agenda)
 (global-set-key (kbd "C-c c") #'org-capture)
 
+;; Geiser Racket 
+
+;; (use-package geiser-racket :ensure t)
+;;(setq geiser-racket-binary (executable-find "Racket"))
+
 ;; PDF-TOOLS
 
      (pdf-tools-install)
@@ -98,7 +103,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages '(pdf-tools darcula-theme ##)))
+ '(package-selected-packages '(geiser-racket  pdf-tools darcula-theme ##)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
