@@ -21,6 +21,12 @@
 (global-set-key (kbd "C-c a") #'org-agenda)
 (global-set-key (kbd "C-c c") #'org-capture)
 
+;; Client Rest
+
+(with-eval-after-load 'org
+(define-key org-mode-map (kbd "C-c C-r") verb-command-map
+	    ))
+
 ;; PDF-TOOLS
 
      (pdf-tools-install)
