@@ -21,10 +21,15 @@
 (global-set-key (kbd "C-c a") #'org-agenda)
 (global-set-key (kbd "C-c c") #'org-capture)
 
+;; Client Rest
+
+(with-eval-after-load 'org
+(define-key org-mode-map (kbd "C-c C-r") verb-command-map
+	    ))
+
 ;; Geiser Racket 
 
-;; (use-package geiser-racket :ensure t)
-;;(setq geiser-racket-binary (executable-find "Racket"))
+(setq geiser-active-implementations '(racket))
 
 ;; PDF-TOOLS
 
