@@ -1,4 +1,6 @@
 #lang reader "stacker.rkt"
-42
-"Olá, mundo"
-#t
+4
+8
++
+3
+*
