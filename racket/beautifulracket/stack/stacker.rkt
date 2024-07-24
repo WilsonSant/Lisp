@@ -11,6 +11,28 @@
 
 (define-macro (stacker-module-begin HANDLE-EXPR ...)
   #'(#%module-begin
-     'HANDLE-EXPR ...
+     HANDLE-EXPR ...
+     (display (car stack))
      ))
  (provide (rename-out [stacker-module-begin #%module-begin]))
+
+(define stack '())
+
+(define (pop-stack!)
+  (define arg (car stack))
+  (set! stack (cdr stack))
+  arg)
+
+ (define (push-stack! arg)
+   (set! stack (cons arg stack)))
+
+(define (handle [arg #f])
+  (cond
+    [(number? arg) (push-stack! arg)]
+    [(or (equal? + arg) (equal? * arg))
+     (define op-result (arg (pop-stack!) (pop-stack!)))
+     (push-stack! op-result)])
+  )
+
+ (provide handle)
+ (provide + *)
