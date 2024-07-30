@@ -1,0 +1,3 @@
+(defn car [lat] (first lat))
+
+(defn cdr [lat] (rest lat))
